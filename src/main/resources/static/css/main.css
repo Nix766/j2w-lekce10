@@ -1,0 +1,32 @@
+body {
+    margin: 40px;
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit {
+    align-self: flex-end;
+}
+
+a.page {
+    padding: 0 1em;
+}
+
+a.page.active {
+    color: silver;
+    text-decoration: none;
+}
+
+form {
+    padding: 20px;
+    border: 1px solid silver;
+    border-radius: 10px;
+}
