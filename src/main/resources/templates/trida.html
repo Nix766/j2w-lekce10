@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seznam článků</title>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css" th:href="@{/css/normalize.css}">
+    <link rel="stylesheet" href="/css/skeleton.css" th:href="@{/css/skeleton.css}">
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}">
+    <link rel="icon" type="image/png" href="/images/favicon.png" th:href="@{/images/favicon.png}">
+</head>
+<body>
+<main class="container">
+    <h1 th:utext="${trida.nazev}"></h1>
+    <span>Třídní učitel: </span>
+    <h3 th:utext="${trida.tridniUcitel}"></h3>
+    <span>Seznam studentů: </span>
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student: ${trida.studenti}">
+            <td><a th:utext="${student}" th:href="@{/student(id=${student.id})}"></a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/">Zpět na seznam tříd</a>
+</main>
+</body>
+</html>
